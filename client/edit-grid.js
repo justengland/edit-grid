@@ -5,21 +5,16 @@ $( "td a" ).on('focus', function() {
 
   var $editElement = $currentLink.siblings().first();
 
-  $editElement.show().focus();
+  $editElement.attr('value',currentText).show().focus().select();
 });
 
-$( "td input" ).on('focusout', function() {
+$( "td input, td textarea, td select" ).on('focusout', function() {
   var $currentEdit = $(this);
+  var currentText = $currentEdit.val();
+  console.log('currentText::', currentText);
   $currentEdit.hide();
-  var $textElement = $currentEdit.parent().find('a');
-  $textElement.show();
-});
-
-$( "td select" ).on('focusout', function() {
-  var $currentEdit = $(this);
-  $currentEdit.hide();
-  var $textElement = $currentEdit.parent().find('a');
-  $textElement.show();
+  var $linkElement = $currentEdit.parent().find('a');
+  $linkElement.text(currentText).show();
 });
 
 
