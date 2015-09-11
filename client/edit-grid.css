@@ -1,0 +1,21 @@
+table {
+    margin: 20px;
+}
+th, td {
+    padding: 15px;
+    border: 1px solid;
+}
+th {
+    background-color:#6699FF;
+    font-weight:bold;
+}
+
+.desc a {
+    text-decoration: none;
+}
+
+a { color: green; }
+a:focus { color: red; }
+
+
+
